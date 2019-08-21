@@ -6,11 +6,25 @@
 package trabalho.git;
 
 import javax.swing.JDesktopPane;
+import javax.swing.JInternalFrame;
 
 /**
  *
  * @author Laboratorio
  */
 public class AreaDeTrabalho extends JDesktopPane {
-
+    private JInternalFrame janelaCliente;
+    
+    
+    public void abrirJanelaCliente() {
+        if (janelaCliente == null) {
+            janelaCliente = new JanelaCliente();
+            janelaCliente.setVisible(true);
+            this.add(janelaCliente);
+        }
+    }
+    
+    public void fecharJanelaCliente() {
+        janelaCliente = null;
+    }
 }
